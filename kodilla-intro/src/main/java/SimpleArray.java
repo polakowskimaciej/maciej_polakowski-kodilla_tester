@@ -10,5 +10,11 @@ public class SimpleArray {
         System.out.println(cat);
         int numberOfElements = cats.length;
         System.out.println("Moja tablica ma " + numberOfElements + " elementów.");
+        for (int i = 0; i < cats.length; i++) {
+            System.out.println(cats[i]);
+        }
+        for (int i = cats.length -1; i >= 0; i--) {
+            System.out.println(cats[i]);
+        }
     }
 }
