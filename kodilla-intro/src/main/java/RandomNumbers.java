@@ -5,18 +5,17 @@ public class RandomNumbers {
         Random random = new Random();
         int result = 0;
         int sum = 0;
+        int biggest = 0;
+        int min = 30;
         while (sum < max) {
             int temp = random.nextInt(30);
             sum = sum + temp;
-            int biggest = 0;
+
             if (temp > biggest) {
                 biggest = temp;
-                return (biggest);
             }
-            int min = 0;
             if (temp < min) {
                 min = temp;
-                return (min);
             }
             result++;
         }
