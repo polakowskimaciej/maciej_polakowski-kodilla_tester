@@ -3,7 +3,8 @@ public class Book {
     private String title;
 
     public static of(String author, String title) {
-        return (author,title);
+        return (author, title);
     }
+
 
 }

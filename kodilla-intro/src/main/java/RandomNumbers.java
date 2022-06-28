@@ -1,12 +1,12 @@
 import java.util.Random;
 
 public class RandomNumbers {
-    public static int getCountOfRandomNumberuntill500(int max) {
-        Random random = new Random();
+    int min = 30;
+    int biggest = 0;
+    public int getCountOfRandomNumberuntill500(int max) {
         int result = 0;
         int sum = 0;
-        int biggest = 0;
-        int min = 30;
+        Random random = new Random();
         while (sum < max) {
             int temp = random.nextInt(30);
             sum = sum + temp;
@@ -21,9 +21,10 @@ public class RandomNumbers {
         }
         return (result);
     }
-
-    public static void main(String[] args) {
-        int result = getCountOfRandomNumberuntill500(500);
-        System.out.println(result);
-    }
+public int getBiggest() {
+        return (biggest);
+}
+public int getMin() {
+        return (min);
+}
 }
