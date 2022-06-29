@@ -1,14 +1,24 @@
 public class Book {
     private String author;
     private String title;
+    //konstruktor
+private Book (String author, String title) {
+    this.author = author;
+    this.title = title;
+}
+
+    public String getAuthor() {
+        return this.author;
+    }
 
     public String getTitle() {
-        return title;
+        return this.title;
     }
-    public String getAuthor() {return author;}
-
+//metoda of robiąca to samo co konstruktor
     public static Book of(String author, String title) {
-                return new Book(Book.getTitle(),Book.getAuthor());
+        Book book = new Book(author, title);
+    //wywołać konstruktor
+    return book;
     }
 
 }
