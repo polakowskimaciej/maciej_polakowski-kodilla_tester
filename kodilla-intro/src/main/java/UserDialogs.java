@@ -1,10 +1,10 @@
-import java.util.Scanner;
+import java.util.Scanner; //klasa z metodami publicznymi
 public class UserDialogs {
     public static String getUsername() {
         Scanner scanner = new Scanner(System.in);                 // [1]
         while (true) {                                            // [2]
             System.out.println("Enter your name:");                // [3]
-            String name = scanner.nextLine().trim();               // [4]
+            String name = scanner.nextLine().trim();               // [4] trim to nie metoda skanerra
             if (name.length() >= 2) {                              // [5]
                 return name;                                        // [6]
             }

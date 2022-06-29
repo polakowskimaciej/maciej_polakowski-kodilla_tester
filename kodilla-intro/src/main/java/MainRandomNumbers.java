@@ -7,5 +7,6 @@ public class MainRandomNumbers {
         System.out.println(a.biggest);
         a.getMin();
         System.out.println(a.min);
+        System.out.println(a.temps); //petla for i w środku wyświetlanie tablicy
     }
 }
