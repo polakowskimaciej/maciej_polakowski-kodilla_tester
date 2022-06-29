@@ -18,7 +18,7 @@ private Book (String author, String title) {
     public static Book of(String author, String title) {
         Book book = new Book(author, title);
     //wywołać konstruktor
-    return book;
+        return book;
     }
 
 }
