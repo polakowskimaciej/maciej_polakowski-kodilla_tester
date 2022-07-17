@@ -19,8 +19,8 @@ System.out.println("Metoda sub działa poprawnie dla liczb" + a + "i" + b);
         } else {
             System.out.println("Metoda sub nie działa poprawnie dla liczb " + a + " i " + b);
         }
-        int squareResult = calculator.square(a);
-        boolean squareCorrect = ResultChecker.assertEquals(25,squareResult);
+        double squareResult = calculator.square(a);
+        boolean squareCorrect = ResultChecker.assertEqualsDouble(25.00,squareResult);
         if (squareCorrect) {
             System.out.println("Metoda square działa poprawnie dla liczb" + a + "i" + b);
         } else {
