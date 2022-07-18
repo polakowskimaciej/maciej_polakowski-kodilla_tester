@@ -5,10 +5,11 @@ import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class CalculatorTestSuite {
+    Calculator calculator = new Calculator();
 
     @Test
     public void testSum() {
-        Calculator calculator = new Calculator();
+
         int a = 5;
         int b = 8;
         int sumResult = calculator.add(a, b);
@@ -16,7 +17,7 @@ public class CalculatorTestSuite {
     }
     @Test
     public void testSub() {
-        Calculator calculator = new Calculator();
+
         int a = 5;
         int b = 8;
         int subResult = calculator.sub(a,b);
@@ -24,13 +25,19 @@ public class CalculatorTestSuite {
     }
     @Test
     public void testSquare() {
-        Calculator calculator = new Calculator();
+
         double a = 5;
         double squareResult = calculator.square(a);
         assertEquals(25, squareResult);
-        double b =0;
+    }
+    @Test
+            public void testSquareZero() {
+        double b = 0;
         double squareResultZero = calculator.square(b);
-                assertEquals(0,squareResultZero,0.01);
+        assertEquals(0, squareResultZero, 0.01);
+    }
+    @Test
+            public void testSquareNegative() {
                 double c = -7;
                 double squareResultMinus = calculator.square(c);
                 assertEquals(49,squareResultMinus,0.01);
