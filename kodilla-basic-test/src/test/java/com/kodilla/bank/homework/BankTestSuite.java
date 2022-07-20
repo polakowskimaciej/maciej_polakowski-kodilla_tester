@@ -10,7 +10,7 @@ public class BankTestSuite {
 public void shouldAddTransaction() {
     Bank bank = new Bank();
     bank.cashMashines[0].addTransaction(5);
-    assertEquals(0,bank.cashMashines.length);
+    assertEquals(1,bank.cashMashines[0].getSize());
 }
     @Test
     public void shouldGetHowManyIncomeTotal() {
