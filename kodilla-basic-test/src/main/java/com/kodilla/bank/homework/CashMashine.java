@@ -4,7 +4,6 @@ public class CashMashine {
     //potrzebne tablice do zapisywania transakcji
     private int[] transactions;
     private int size;
-    private int count;
 
     // pewnie to tablice double bo grosze też są w obiegu
     // ale zrobimy tablice int bo łatwiej

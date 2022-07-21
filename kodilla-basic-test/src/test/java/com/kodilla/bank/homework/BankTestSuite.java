@@ -9,17 +9,16 @@ public class BankTestSuite {
     @Test
     public void shouldAddTransaction() {
         Bank bank = new Bank();
-        for(int i=0;i<bank.cashMashines.length; i++)
-            bank.cashMashines[i] = new CashMashine();
+        bank.addCashmashine(new CashMashine());
         bank.cashMashines[0].addTransaction(5);
         assertEquals(1, bank.cashMashines[0].getSize());
     }
-
     @Test
     public void shouldGetHowManyIncomeTotal() {
         Bank bank = new Bank();
-        for(int i=0;i<bank.cashMashines.length; i++)
-            bank.cashMashines[i] = new CashMashine();
+        bank.addCashmashine(new CashMashine());
+        bank.addCashmashine(new CashMashine());
+        bank.addCashmashine(new CashMashine());
         bank.cashMashines[0].addTransaction(5);
         bank.cashMashines[0].addTransaction(-10);
         bank.cashMashines[0].addTransaction(-5);
@@ -39,8 +38,9 @@ public class BankTestSuite {
     @Test
     public void shouldGetHowManyWithdrawalTotal() {
         Bank bank = new Bank();
-        for(int i=0;i<bank.cashMashines.length; i++)
-            bank.cashMashines[i] = new CashMashine();
+        bank.addCashmashine(new CashMashine());
+        bank.addCashmashine(new CashMashine());
+        bank.addCashmashine(new CashMashine());
         bank.cashMashines[0].addTransaction(5);
         bank.cashMashines[0].addTransaction(-10);
         bank.cashMashines[0].addTransaction(-5);
@@ -60,8 +60,9 @@ public class BankTestSuite {
     @Test
     public void shouldGetTotalBalance() {
         Bank bank = new Bank();
-        for(int i=0;i<bank.cashMashines.length; i++)
-            bank.cashMashines[i] = new CashMashine();
+        bank.addCashmashine(new CashMashine());
+        bank.addCashmashine(new CashMashine());
+        bank.addCashmashine(new CashMashine());
         bank.cashMashines[0].addTransaction(5);
         bank.cashMashines[0].addTransaction(-10);
         bank.cashMashines[0].addTransaction(-5);
@@ -80,8 +81,9 @@ public class BankTestSuite {
     @Test
     public void shouldGetAverageOfWithdravalTransactionsTotal() {
         Bank bank = new Bank();
-        for(int i=0;i<bank.cashMashines.length; i++)
-            bank.cashMashines[i] = new CashMashine();
+        bank.addCashmashine(new CashMashine());
+        bank.addCashmashine(new CashMashine());
+        bank.addCashmashine(new CashMashine());
         bank.cashMashines[0].addTransaction(5);
         bank.cashMashines[0].addTransaction(-10);
         bank.cashMashines[0].addTransaction(-5);
@@ -101,8 +103,9 @@ public class BankTestSuite {
     @Test
     public void shouldGetAverageOfIncomeTransactionsTotal() {
         Bank bank = new Bank();
-        for(int i=0;i<bank.cashMashines.length; i++)
-            bank.cashMashines[i] = new CashMashine();
+        bank.addCashmashine(new CashMashine());
+        bank.addCashmashine(new CashMashine());
+        bank.addCashmashine(new CashMashine());
         bank.cashMashines[0].addTransaction(5);
         bank.cashMashines[0].addTransaction(-10);
         bank.cashMashines[0].addTransaction(-5);

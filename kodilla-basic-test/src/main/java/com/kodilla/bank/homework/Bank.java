@@ -2,16 +2,22 @@ package com.kodilla.bank.homework;
 
 public class Bank {
     // tablica bankomatów
-    CashMashine[] cashMashines = new CashMashine[3];
+    CashMashine[] cashMashines;
+    private int size;
 
-    public void fillArrays() {
-        for(int i=0; i<cashMashines.length; i++)
-            cashMashines[i] =new CashMashine();
+    public Bank() {
+        this.size = 0;
+        this.cashMashines = new CashMashine[0];
     }
 
-    public CashMashine[] getCashMashines() {
-        return cashMashines;
+    public void addCashmashine(CashMashine cashMashine) {
+        this.size++;
+        CashMashine[] newCashMashines = new CashMashine[this.size];
+        System.arraycopy(cashMashines, 0, newCashMashines, 0, cashMashines.length);
+        newCashMashines[this.size - 1] = cashMashine;
+        this.cashMashines = newCashMashines;
     }
+
     //metoda całkowity bilans ze wszystkich bankomatów,
     public int getTotalBalance() {
         int totalBalance = 0;
