@@ -41,6 +41,7 @@ public class BankTestSuite {
         bank.addCashmashine(new CashMashine());
         bank.addCashmashine(new CashMashine());
         bank.addCashmashine(new CashMashine());
+        bank.addCashmashine(new CashMashine());
         bank.cashMashines[0].addTransaction(5);
         bank.cashMashines[0].addTransaction(-10);
         bank.cashMashines[0].addTransaction(-5);
@@ -53,7 +54,11 @@ public class BankTestSuite {
         bank.cashMashines[2].addTransaction(-10);
         bank.cashMashines[2].addTransaction(-5);
         bank.cashMashines[2].addTransaction(10);
-        assertEquals(6, bank.getHowManyWithdrawalTransactionsTotal());
+        bank.cashMashines[3].addTransaction(5);
+        bank.cashMashines[3].addTransaction(-10);
+        bank.cashMashines[3].addTransaction(-5);
+        bank.cashMashines[3].addTransaction(10);
+        assertEquals(8, bank.getHowManyWithdrawalTransactionsTotal());
 
     }
 
