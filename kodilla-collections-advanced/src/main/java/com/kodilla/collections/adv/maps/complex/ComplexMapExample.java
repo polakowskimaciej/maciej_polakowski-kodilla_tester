@@ -13,7 +13,7 @@ public class ComplexMapExample {
         Student jessie = new Student("Jessie", "Pinkman");
         Student bart = new Student("Bart", "Simpson");
 
-        Grades johnGrades = new Grades(List.of(5.0, 4.0, 4.5, 5.0, 5.0));
+        Grades johnGrades = new Grades(5.0, 4.0, 4.5, 5.0, 5.0);
         Grades jessieGrades = new Grades(List.of(2.5, 3.0, 2.0));
         Grades bartGrades = new Grades(List.of(4.0, 4.0, 4.0, 4.0, 5.0));
 

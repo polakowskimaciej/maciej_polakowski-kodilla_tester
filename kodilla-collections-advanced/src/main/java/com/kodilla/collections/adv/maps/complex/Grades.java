@@ -1,6 +1,7 @@
 package com.kodilla.collections.adv.maps.complex;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 public class Grades {
@@ -9,7 +10,9 @@ public class Grades {
     public Grades(List<Double> grades) {
         this.grades = grades;
     }
-
+public Grades(Double... grades) {
+        this.grades = Arrays.asList(grades);
+}
     public double getAverage() {    // [1]
         double sum = 0.0;            // [2]
         for (double grade : grades)  // [3]
