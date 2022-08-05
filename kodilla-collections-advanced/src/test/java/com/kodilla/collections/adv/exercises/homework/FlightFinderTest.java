@@ -8,60 +8,51 @@ import java.util.List;
 import static org.junit.jupiter.api.Assertions.*;
 
 class FlightFinderTest {
+
     @Test
     public void testAddFlight() {
         //given
-        FlightRepository flightTable = new FlightRepository();
-        String city = "Szczecin";
-        Flight flight = new Flight(city, "Poznan" );
+        FlightRepository flightRepository = new FlightRepository();
         //when
-        flightTable.addFlight(city,flight);
+        flightRepository.addFlight("Poznan", new Flight("Poznan", "Warsaw"));
+        flightRepository.addFlight("Poznan", new Flight("Poznan", "Szczecin"));
+        flightRepository.addFlight("Poznan", new Flight("Poznan", "Berlin"));
+        flightRepository.addFlight("Warsaw", new Flight("Warsaw", "Poznan"));
+        flightRepository.addFlight("Warsaw", new Flight("Warsaw", "Berlin"));
+        flightRepository.addFlight("Warsaw", new Flight("Warsaw", "Szczecin"));
+        flightRepository.addFlight("Szczecin", new Flight("Szczecin", "Poznan"));
+        flightRepository.addFlight("Szczecin", new Flight("Szczecin", "Berlin"));
         //than
-        assertEquals(1,flightTable.size());
+        assertEquals(3, flightRepository.size());
     }
 
     @Test
     public void findFlightsFrom() {
         //given
-        FlightRepository flightTable = new FlightRepository();
-        flightTable.addFlight("Poznan", new Flight("Poznan","Warsaw" ));
-        flightTable.addFlight("Poznan", new Flight("Poznan", "Szeczcin"));
-        flightTable.addFlight("Poznan", new Flight("Poznan", "Berlin"));
-        flightTable.addFlight("Warsaw", new Flight("Warsaw", "Poznan"));
-        flightTable.addFlight("Warsaw", new Flight("Warsaw", "Berlin"));
-        flightTable.addFlight("Warsaw", new Flight("Warsaw", "Szczecin"));
-        flightTable.addFlight("Szczecin", new Flight("Szczecin", "Poznan"));
-        flightTable.addFlight("Szczecin", new Flight("Szczecin", "Berlin"));
-        FlightFinder flightFinder = new FlightFinder();
+        FlightRepository flightRepository = new FlightRepository();
+        flightRepository.addFlight("Poznan", new Flight("Poznan", "Warsaw"));
+        flightRepository.addFlight("Poznan", new Flight("Poznan", "Szczecin"));
+        flightRepository.addFlight("Poznan", new Flight("Poznan", "Berlin"));
+        FlightFinder flightFinder1 = new FlightFinder();
         //when
-        List<Flight> result = flightFinder.findFlightsFrom("Poznan");
+        List<Flight> result1 = flightFinder1.findFlightsFrom("Poznan");
         //than
-        List<Flight> expectedList = new ArrayList<>();
-        expectedList.add(new Flight("Poznan","Warsaw" ));
-        expectedList.add(new Flight("Poznan", "Szeczcin"));
-        expectedList.add(new Flight("Poznan", "Berlin"));
-        assertEquals(expectedList,result);
+        List<Flight> expectedList1 = new ArrayList<>();
+        expectedList1.add(new Flight("Poznan", "Warsaw"));
+        expectedList1.add(new Flight("Poznan", "Szczecin"));
+        expectedList1.add(new Flight("Poznan", "Berlin"));
+        assertEquals(expectedList1, result1);
     }
 
     @Test
     public void findFlightsTo() {
-        //given
-        FlightRepository flightTable = new FlightRepository();
-        flightTable.addFlight("Poznan", new Flight("Poznan","Warsaw" ));
-        flightTable.addFlight("Poznan", new Flight("Poznan", "Szczecin"));
-        flightTable.addFlight("Poznan", new Flight("Poznan", "Berlin"));
-        flightTable.addFlight("Warsaw", new Flight("Warsaw", "Poznan"));
-        flightTable.addFlight("Warsaw", new Flight("Warsaw", "Berlin"));
-        flightTable.addFlight("Warsaw", new Flight("Warsaw", "Szczecin"));
-        flightTable.addFlight("Szczecin", new Flight("Szczecin", "Poznan"));
-        flightTable.addFlight("Szczecin", new Flight("Szczecin", "Berlin"));
-        FlightFinder flightFinder1 = new FlightFinder();
+        FlightFinder flightFinder2 = new FlightFinder();
         //when
-        List<Flight> result = flightFinder1.findFlightsTo("Szczecin");
+        List<Flight> result2 = flightFinder2.findFlightsTo("Poznan");
         //than
-        List<Flight> expectedList = new ArrayList<>();
-        expectedList.add(new Flight("Warsaw", "Szczecin"));
-        expectedList.add(new Flight("Poznan", "Szczecin"));
-        assertEquals(expectedList,result);
+        List<Flight> expectedList2 = new ArrayList<>();
+        expectedList2.add(new Flight("Szczecin", "Poznan"));
+        expectedList2.add(new Flight("Warsaw", "Poznan"));
+        assertEquals(expectedList2, result2);
     }
 }
