@@ -7,6 +7,7 @@ import java.util.Map;
 
 public class FlightFinder {
     public List<Flight> findFlightsFrom(String departure) {
+
         return FlightRepository.getFlightsTable().getOrDefault(departure, Collections.emptyList());
     }
 

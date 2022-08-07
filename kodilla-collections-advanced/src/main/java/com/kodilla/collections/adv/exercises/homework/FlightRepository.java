@@ -14,4 +14,7 @@ public class FlightRepository {
         return flightsTable;
     }
     public int size() {return flightsTable.size();}
+    public void cleanFlightRepository() {
+        flightsTable.clear();
+    }
 }
