@@ -1,4 +1,4 @@
-package stream;
+package com.kodilla.stream.homework;
 
 import com.kodilla.stream.User;
 import com.kodilla.stream.UsersManager;
@@ -52,6 +52,7 @@ class UsersManagerTest {
         expectedList.add(new User("Mike Ehrmantraut", 57, 0, "Security"));
         assertEquals(result, expectedList);
     }
+
     @Test
     void filterIfUserPostedTest() {
         List<User> result = UsersManager.filterIfUserPosted();
@@ -60,14 +61,16 @@ class UsersManagerTest {
         expectedList.add(new User("Jessie Pinkman", 25, 4648, "Sales"));
         expectedList.add(new User("Tuco Salamanca", 34, 116, "Manager"));
         expectedList.add(new User("Gale Boetticher", 44, 2, "Chemists"));
-        assertEquals(result,expectedList);
+        assertEquals(result, expectedList);
     }
+
     @Test
     void getSumOfPostsTest() {
         int result = UsersManager.getSumOfPosts();
         int expectedResult = 7 + 4648 + 116 + 2;
-        assertEquals(expectedResult,result);
+        assertEquals(expectedResult, result);
     }
+
     @Test
     void sortUsersFromOldestTest() {
         List<String> result = UsersManager.sortUsersFromOldest();
@@ -78,6 +81,6 @@ class UsersManagerTest {
         expectedList.add("Gale Boetticher");
         expectedList.add("Tuco Salamanca");
         expectedList.add("Jessie Pinkman");
-        assertEquals(result,expectedList);
+        assertEquals(result, expectedList);
     }
 }
