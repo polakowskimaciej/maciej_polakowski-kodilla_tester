@@ -1,5 +1,7 @@
 package stream;
 
+import com.kodilla.stream.User;
+import com.kodilla.stream.UsersManager;
 import org.junit.jupiter.api.Test;
 
 import java.util.ArrayList;
