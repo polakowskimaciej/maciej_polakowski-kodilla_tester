@@ -12,8 +12,7 @@ import static org.junit.jupiter.api.Assertions.*;
 class ForumStatsTest {
     //klasa z listą nowych użytkowników
     public static List<User> newUserList() {
-        List<User> usersList = UsersRepository.getUsersList();
-        usersList.clear();
+        List<User> usersList = new ArrayList<>();
         usersList.add(new User("Mafia", 50, 10, "Cats"));
         usersList.add(new User("Igorek", 25, 2000, "Cats"));
         usersList.add(new User("Olga", 34, 100, "Cats"));
@@ -24,14 +23,13 @@ class ForumStatsTest {
     //tutaj zwykłe testy dla średniej z kolekcji UsersRepository
     @Test
     void averageOldUsersPostsTest() {
-
-        double result = ForumStats.averageOldUsersPosts();
-        assertEquals(2.25, result);
+        double result = ForumStats.averageOldUsersPosts(ForumStatsTest.newUserList(),40);
+        assertEquals(10.00, result);
     }
 
     @Test
     void averageYoungUsersPostsTest() {
-        double result = ForumStats.averageYoungUsersPosts();
-        assertEquals(2382.00, result);
+        double result = ForumStats.averageYoungUsersPosts(ForumStatsTest.newUserList(), 40);
+        assertEquals(1050.00, result);
     }
 }
