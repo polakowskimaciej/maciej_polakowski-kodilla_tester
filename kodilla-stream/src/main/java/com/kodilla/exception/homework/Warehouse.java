@@ -17,18 +17,15 @@ public class Warehouse {
     public Order getOrder(String number) throws OrderDoesntExistException {
         //zwracamy Order o numerze
         //zmienna
-        Order orderFind = orderList.stream()
-                //w kolekcji szukam zamówienia o danym numerze
-                //numer ma się równać numerowi z metory get number
-                .filter(order -> number.equals(order.getNumber(number)))
-                //pierwszy który ma ten numer
-                .findFirst()
-                .orElse(null);
-                //albo nic nie znajdzie
-        if(orderFind != null)
+        //albo nic nie znajdzie
                 //zwracam zamówienie
-            return orderFind;
-        throw new OrderDoesntExistException();
+            return orderList.stream()
+                    //w kolekcji szukam zamówienia o danym numerze
+                    //numer ma się równać numerowi z metory get number
+                    .filter(order -> number.equals(order.getNumber(number)))
+                    //pierwszy który ma ten numer
+                    .findFirst()
+                    .orElseThrow(OrderDoesntExistException::new);
 
     }
 }
