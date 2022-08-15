@@ -2,6 +2,7 @@ package com.kodilla.stream.homework;
 
 import com.kodilla.stream.User;
 import com.kodilla.stream.UsersManager;
+import com.kodilla.stream.UsersRepository;
 import org.junit.jupiter.api.Test;
 
 import java.util.ArrayList;
@@ -21,6 +22,7 @@ class UsersManagerTest {
         expectedList.add("Walter White");
         expectedList.add("Gale Boetticher");
         assertEquals(result, expectedList);
+        UsersRepository.cleanRepository();
     }
 
     @Test
@@ -31,6 +33,7 @@ class UsersManagerTest {
         expectedList.add(new User("Gus Firing", 49, 0, "Board"));
         expectedList.add(new User("Mike Ehrmantraut", 57, 0, "Security"));
         assertEquals(result, expectedList);
+        UsersRepository.cleanRepository();
     }
 
     @Test
@@ -38,7 +41,8 @@ class UsersManagerTest {
         List<User> result = UsersManager.getUsersOlderThan(50);
         List<User> expectedList = new ArrayList<>();
         expectedList.add(new User("Mike Ehrmantraut", 57, 0, "Security"));
-        assertEquals(result, expectedList);
+        assertEquals(expectedList,result);
+        UsersRepository.cleanRepository();
     }
 
     @Test
@@ -51,6 +55,7 @@ class UsersManagerTest {
         expectedList.add(new User("Gale Boetticher", 44, 2, "Chemists"));
         expectedList.add(new User("Mike Ehrmantraut", 57, 0, "Security"));
         assertEquals(result, expectedList);
+        UsersRepository.cleanRepository();
     }
 
     @Test
@@ -62,6 +67,7 @@ class UsersManagerTest {
         expectedList.add(new User("Tuco Salamanca", 34, 116, "Manager"));
         expectedList.add(new User("Gale Boetticher", 44, 2, "Chemists"));
         assertEquals(result, expectedList);
+        UsersRepository.cleanRepository();
     }
 
     @Test
@@ -69,6 +75,7 @@ class UsersManagerTest {
         int result = UsersManager.getSumOfPosts();
         int expectedResult = 7 + 4648 + 116 + 2;
         assertEquals(expectedResult, result);
+        UsersRepository.cleanRepository();
     }
 
     @Test
@@ -82,5 +89,6 @@ class UsersManagerTest {
         expectedList.add("Tuco Salamanca");
         expectedList.add("Jessie Pinkman");
         assertEquals(result, expectedList);
+        UsersRepository.cleanRepository();
     }
 }

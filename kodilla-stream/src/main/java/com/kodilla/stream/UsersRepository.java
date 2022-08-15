@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class UsersRepository {
-    private static List<User> users = new ArrayList<>();
+    private static final List<User> users = new ArrayList<>();
 
     public static List<User> getUsersList() {
         users.add(new User("Walter White", 50, 7, "Chemists"));
@@ -16,7 +16,7 @@ public class UsersRepository {
         return users;
     }
 
-    public void cleanRepository() {
+    public static void cleanRepository() {
         users.clear();
     }
 }
