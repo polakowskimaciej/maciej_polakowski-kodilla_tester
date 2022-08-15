@@ -10,6 +10,9 @@ public class Warehouse {
     public void addOrder(Order order) {
         orderList.add(order);
     }
+    public int getOrderListSize() {
+        return orderList.size();
+    }
 
     //metodę Order getOrder(String number), która wyszuka w kolekcji zamówienie o podanym numerze
     // (użyj Stream) i je zwróci.
