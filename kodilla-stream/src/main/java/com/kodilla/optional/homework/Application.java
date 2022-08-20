@@ -27,8 +27,9 @@ public class Application {
         for (Student student : students)
             //opakuj każdego teachera
         {
-            Optional<Teacher> optionalTeacher = Optional.ofNullable(student.getTeacher());
-            System.out.println(student.getName() + " " + optionalTeacher.orElse(new Teacher("<undefined>")).getName());
+            //Optional<Teacher> optionalTeacher = Optional.ofNullable(student.getTeacher());
+
+            System.out.println(student.getName() + " " + student.getTeacher().orElse(new Teacher("<undefined>")).getName());
         }
             //sprawdź czy student.getteacher jest nullem
             // jeśli jest null to wyświetl "undef"

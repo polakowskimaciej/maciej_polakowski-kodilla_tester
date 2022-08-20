@@ -26,7 +26,6 @@ class UserValidatorTest {
     @CsvSource(value = {"polakowski@maciej.pl", "igorek@kotek.pl", "mafia.kotek@tricolor.com", "olunia@burykotek.pl"})
     void shouldValidateEmailTestPositive(String input) {
         assertTrue(userValidator.validateEmail(input));
-
     }
 
     @ParameterizedTest
