@@ -35,7 +35,7 @@ class ShopTest {
         List<Order> expectedList = new ArrayList<>();
         expectedList.add(first);
         expectedList.add(third);
-        assertEquals(expectedList,shop.getOrderByDates(new Date(1992, Calendar.JUNE,26),new Date(2022, Calendar.FEBRUARY, 1)));
+        assertEquals(expectedList,shop.getOrderByDates(new Date(1992, Calendar.JUNE,26), new Date(2022, Calendar.FEBRUARY, 1)));
     }
 
     @Test
