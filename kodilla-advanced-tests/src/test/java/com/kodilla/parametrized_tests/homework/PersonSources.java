@@ -44,7 +44,5 @@ public class PersonSources {
         getPersonList();
         for (Person person : people)
             System.out.println(person.getBMI());
-
     }
-
 }
