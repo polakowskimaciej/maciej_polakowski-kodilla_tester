@@ -1,5 +1,6 @@
 package com.kodilla.execution_model.homework;
 
+import java.time.Instant;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
@@ -12,11 +13,11 @@ public class Shop {
         orderList.add(order);
     }
 
-    public List<Order> getOrderByDates(Date firstDate, Date lastDate) {
+    public List<Order> getOrderByDates(Instant firstDate, Instant lastDate) {
         //
         return orderList.stream()
-                .filter(date -> date.getDate().after(firstDate))
-                .filter(date -> date.getDate().before(lastDate))
+                .filter(date -> date.getDate().isAfter(firstDate))
+                .filter(date -> date.getDate().isBefore(lastDate))
                 .collect(Collectors.toList());
     }
     public List<Order> getOrderByCost(double lowestCost, double highestCost) {

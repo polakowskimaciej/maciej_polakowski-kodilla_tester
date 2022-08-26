@@ -2,6 +2,7 @@ package com.kodilla.execution_model.homework;
 
 import org.junit.jupiter.api.*;
 
+import java.time.Instant;
 import java.util.*;
 import java.util.stream.Collectors;
 
@@ -9,9 +10,12 @@ import static org.junit.jupiter.api.Assertions.*;
 
 class ShopTest {
     Shop shop = new Shop();
-    Order first = new Order(123.50, new Date(2022, Calendar.FEBRUARY, 1), "Mafia");
-    Order second = new Order(12, new Date(1983, Calendar.MARCH,7), "Blue Monday");
-    Order third = new Order(99.99, new Date(1992, Calendar.JUNE,26), "Maciej");
+    Instant instant1 = Instant.parse("2011-12-03T10:15:30Z");
+    Instant instant2 = Instant.parse("1983-03-30T18:35:20Z");
+    Instant instant3 = Instant.parse("1992-06-26T18:35:20Z");
+    Order first = new Order(123.50, instant1, "Mafia");
+    Order second = new Order(12, instant2, "Blue Monday");
+    Order third = new Order(99.99, instant3, "Maciej");
     @BeforeEach
     public void setUp() {
     shop.addOrder(first);
@@ -35,7 +39,7 @@ class ShopTest {
         List<Order> expectedList = new ArrayList<>();
         expectedList.add(first);
         expectedList.add(third);
-        assertEquals(expectedList,shop.getOrderByDates(new Date(1992, Calendar.JUNE,26), new Date(2022, Calendar.FEBRUARY, 1)));
+        assertEquals(expectedList,shop.getOrderByDates(Instant.parse("1991-06-26T18:35:20Z"), Instant.parse("2018-11-30T18:35:20Z")));
     }
 
     @Test
@@ -52,7 +56,7 @@ class ShopTest {
     }
     @Test
     void shouldReturnNullWhenPassingNonExistingDates() {
-        List<Order> result = shop.getOrderByDates(new Date(1995, Calendar.JUNE,26),new Date(2021, Calendar.FEBRUARY, 1));
+        List<Order> result = shop.getOrderByDates(Instant.parse("1995-06-26T18:35:20Z"),Instant.parse("2010-11-30T18:35:24.00Z"));
         assertTrue(result.isEmpty());
     }
     @Test
