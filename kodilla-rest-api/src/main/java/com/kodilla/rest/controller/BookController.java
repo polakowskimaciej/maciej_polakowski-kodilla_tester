@@ -1,6 +1,6 @@
 package com.kodilla.rest.controller;
 
-import com.kodilla.rest.domain.BookDto;
+import com.kodilla.rest.BookDto;
 import com.kodilla.rest.service.BookService;
 import org.springframework.web.bind.annotation.*;
 
