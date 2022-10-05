@@ -10,19 +10,19 @@ public class DivideSteps implements En {
     public DivideSteps() {
         Given("3", () -> {
             // Write code here that turns the phrase above into concrete actions
-
+            this.anInt = 3;
         });
         Given("5", () -> {
             // Write code here that turns the phrase above into concrete actions
-
+            this.anInt = 5;
         });
         Given("15", () -> {
             // Write code here that turns the phrase above into concrete actions
-
+            this.anInt = 15;
         });
         Given("8", () -> {
             // Write code here that turns the phrase above into concrete actions
-
+            this.anInt = 8;
         });
         When("^I ask if it's divisible by three and/or divisible by five$", () -> {
             // Write code here that turns the phrase above into concrete actions
