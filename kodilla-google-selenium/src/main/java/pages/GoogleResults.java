@@ -11,7 +11,7 @@ import java.util.Random;
 public class GoogleResults extends AbstractPage {
     @FindBy(css = "#rso")                  // [1]
     private List<WebElement> results;                // [2]
-    private static List<Integer> saidRandomNumber;
+    private List<Integer> saidRandomNumber;
     public GoogleResults(WebDriver driver) {         // [3]
         super(driver);                                // [4]
         PageFactory.initElements(this.driver, this);  // [5]
@@ -36,7 +36,7 @@ public class GoogleResults extends AbstractPage {
         saidRandomNumber.add(saidNumber);
     }
 
-    public static Integer getSaidRandomNumber() {
+    public Integer getSaidRandomNumber() {
         return saidRandomNumber.stream().mapToInt(Integer::intValue).sum();
     }
 }

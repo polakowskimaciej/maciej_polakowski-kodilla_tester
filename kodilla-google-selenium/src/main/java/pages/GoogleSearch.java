@@ -15,7 +15,6 @@ public class GoogleSearch extends AbstractPage {
     @FindBy(css = "body > div.L3eUgb > div.o3j99.ikrT4e.om7nvf > form > div:nth-child(1) > div.A8SBwf > div.FPdoLc.lJ9FBc > center > input.gNO89b")
     static List<WebElement> searchButton;
 
-
     public void searchResults() throws InterruptedException {
         PageFactory.initElements(driver, GoogleSearch.class);
         Thread.sleep(5000);
@@ -31,12 +30,10 @@ public class GoogleSearch extends AbstractPage {
         inputField.sendKeys("Kodilla");
         inputField.submit();
         GoogleResults googleResults = loadResults(driver);
-        googleResults.iSeeResults();
         googleResults.addRandomPageNumber();
         System.out.println(googleResults.getRandomPageUrl());
         googleResults.selectRandomPage();
     }
-
 
     public GoogleSearch(WebDriver driver) {                  // [2]
         super(driver);
