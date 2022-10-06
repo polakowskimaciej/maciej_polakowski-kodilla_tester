@@ -6,7 +6,7 @@ import org.junit.runner.RunWith;
 
 @RunWith(Cucumber.class)
 @CucumberOptions(
-        features = {"C:\\InteliJ_Projects\\kodilla-course\\kodilla-cucumber\\src\\test\\resources\\wallet\\cash_withdrawal.feature"}
+        features = {"C:\\InteliJ_Projects\\kodilla-course\\kodilla-cucumber\\src\\test\\resources\\wallet"}
 )
 public class TestRunner {
 }

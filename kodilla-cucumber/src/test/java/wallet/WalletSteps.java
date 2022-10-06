@@ -28,6 +28,9 @@ public class WalletSteps implements En {
             // Write code here that turns the phrase above into concrete actions
             Assert.assertEquals(30, cashSlot.getContents());
         });
+        Then("^the balance of my wallet should be \\$(\\d+)$", (Integer arg0) -> {
+            Assert.assertEquals("Incorrect wallet balance", 170,  wallet.getBalance());
+        });
         When("^I request wrong 0$", () -> {
             this.amount = 0;
             Cashier cashier = new Cashier(cashSlot);
@@ -46,6 +49,28 @@ public class WalletSteps implements En {
         Then("^I should b`e told null$", () -> {
             this.string = cashSlot.doNotDispense();
             Assert.assertEquals("null", string);
+        });
+        Given("^there is \\$(\\d+) in my wallet$", (Integer arg0) -> {
+           wallet.deposit(arg0);
+           Assert.assertEquals(arg0, (Integer) wallet.getBalance());
+        });
+        When("^I check the balance of my wallet$", () -> {
+            wallet.getBalance();
+        });
+        Then("^I should see that the balance is \\$(\\d+)$", (Integer arg0) -> {
+            String expected = String.valueOf(arg0);
+            String actual = String.valueOf(wallet.getBalance());
+            Assert.assertEquals(expected, actual);
+        });
+        When("^I withdraw \\$(\\d+)$", (Integer arg0) -> {
+            Cashier cashier = new Cashier(cashSlot);
+            cashier.withdraw(wallet, arg0);
+        });
+        Then("^nothing should be dispensed$", () -> {
+            Assert.assertEquals(0, cashSlot.getContents());
+        });
+        Then("^I should be told that I don't have enough money in my wallet$", () -> {
+            Assert.assertEquals("null", cashSlot.doNotDispense());
         });
     }
 }

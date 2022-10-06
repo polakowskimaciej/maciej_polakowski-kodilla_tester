@@ -7,14 +7,21 @@ public class Cashier {
         this.cashSlot = cashSlot;
     }
 
-    public void withdraw(Wallet wallet, int amount) {
+    public int withdraw(Wallet wallet, int amount) {
+        wallet.debit(amount);
         if (amount > wallet.getBalance()) {
             cashSlot.doNotDispense();
+            return 0;
         } else if (amount == 0) {
             cashSlot.doNotDispense();
-        } else {
-            cashSlot.dispense(amount);
+            return 0;
         }
+            return cashSlot.dispense(amount);
+
     }
 
+
+    public void checkBalance(Wallet wallet) {
+        wallet.getBalance();
+    }
 }
