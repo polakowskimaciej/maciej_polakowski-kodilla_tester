@@ -11,7 +11,8 @@ import java.util.Random;
 public class GoogleResults extends AbstractPage {
     @FindBy(css = "#rso")                  // [1]
     private List<WebElement> results;                // [2]
-    private List<Integer> saidRandomNumber;
+    //private List<Integer> saidRandomNumber;
+
     public GoogleResults(WebDriver driver) {         // [3]
         super(driver);                                // [4]
         PageFactory.initElements(this.driver, this);  // [5]
@@ -21,22 +22,18 @@ public class GoogleResults extends AbstractPage {
         System.out.println("I see results");
         System.out.println(results.size());
     }
-    public RandomPage selectRandomPage() {
-        results.get(getSaidRandomNumber()).click();
-        RandomPage randomPage = new RandomPage(driver);
-        return randomPage;
-    }
-    public String getRandomPageUrl() {
-        return results.get(getSaidRandomNumber()).getAttribute("href");
-    }
-    public void addRandomPageNumber() {
-        Random random = new Random();
-        int max = this.results.size();
-        int saidNumber = random.nextInt(max);
-        saidRandomNumber.add(saidNumber);
-    }
 
-    public Integer getSaidRandomNumber() {
-        return saidRandomNumber.stream().mapToInt(Integer::intValue).sum();
+    public void selectRandomPage() {
+        Random random = new Random();
+        int saidNumber = random.nextInt(this.results.size());
+        results.get(saidNumber).click();
+        //RandomPage randomPage = new RandomPage(driver);
+        //return randomPage;
     }
+    //public String getRandomPageUrl() {
+    //  return results.get(getSaidRandomNumber()).getAttribute("href");
 }
+
+//public Integer getSaidRandomNumber() {
+//  return saidRandomNumber.stream().mapToInt(Integer::intValue).sum();
+//}

@@ -9,6 +9,8 @@ import pages.GoogleSearch;
 import java.io.ByteArrayOutputStream;
 import java.io.PrintStream;
 
+import static org.junit.jupiter.api.Assertions.assertNotEquals;
+
 
 public class TestGoogle {
 
@@ -42,11 +44,11 @@ public class TestGoogle {
         GoogleSearch googleSearch = new GoogleSearch(driver);
         googleSearch.searchResults();
     }
-    //@Test
-    //public void testRandomPage() throws InterruptedException {
-      //  GoogleSearch googleSearch = new GoogleSearch(driver);
-       // googleSearch.searchResultsWithRandomPage();
-        //String url = driver.getCurrentUrl();
-        //assertEquals(url,out.toString());
-    //}
+    @Test
+    public void testRandomPage() throws InterruptedException {
+        GoogleSearch googleSearch = new GoogleSearch(driver);
+        googleSearch.searchResultsWithRandomPage();
+        String url = driver.getCurrentUrl();
+        assertNotEquals("https://www.google.com/", url);
+    }
 }
