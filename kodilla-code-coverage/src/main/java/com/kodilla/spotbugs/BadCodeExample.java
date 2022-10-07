@@ -11,10 +11,8 @@ public class BadCodeExample {
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
-        BadCodeExample badCodeExample = (BadCodeExample) o;
-
-
-        return type != null ? type.equals(badCodeExample.type) : badCodeExample.type == null;
+        BadCodeExample that = (BadCodeExample) o;
+        return Objects.equals(type, that.type);
     }
 
     @Override
