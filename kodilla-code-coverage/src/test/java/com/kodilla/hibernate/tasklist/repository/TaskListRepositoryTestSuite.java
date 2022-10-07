@@ -2,7 +2,6 @@ package com.kodilla.hibernate.tasklist.repository;
 
 import com.kodilla.hibernate.tasklist.TaskList;
 import org.junit.jupiter.api.Assertions;
-import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -17,10 +16,6 @@ class TaskListRepositoryTestSuite {
     private static final String LISTNAME = "Test: Do Hibernate Homework";
     private static final String DESCRIPTION = "Here we go";
 
-    @BeforeEach
-    void setTaskListRepository() {
-        taskListRepository.deleteAll();
-    }
 
     @Test
     void testFindByListName() {
