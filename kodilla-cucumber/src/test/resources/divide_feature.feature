@@ -6,7 +6,7 @@ Feature: FizzBuzz Game
   Scenario Outline: Int is divisible by 3 and/or divisible by 5
     Given <int>
     When I ask if it's divisible by three and/or divisible by five
-    Then I should be told <answer>
+    Then I should get <answer>
     Examples:
     | int | answer |
     | 3   | "Fizz" |

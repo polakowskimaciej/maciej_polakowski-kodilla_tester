@@ -11,7 +11,7 @@ Feature: Cash Withdrawal
   Scenario Outline: Unsuccesful withdrawal from a wallet in credit
     Given I have deposited $200 in my wallet
     When I request wrong <amount>
-    Then I should b`e told null
+    Then 0$ schuld be dispensed
     Examples:
     | amount |
     | 0 |

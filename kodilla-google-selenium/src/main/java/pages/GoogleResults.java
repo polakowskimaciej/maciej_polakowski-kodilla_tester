@@ -27,8 +27,8 @@ public class GoogleResults extends AbstractPage {
         Random random = new Random();
         int saidNumber = random.nextInt(this.results.size());
         results.get(saidNumber).click();
-        //RandomPage randomPage = new RandomPage(driver);
-        //return randomPage;
+        RandomPage randomPage = new RandomPage(driver);
+        return randomPage;
     }
     //public String getRandomPageUrl() {
     //  return results.get(getSaidRandomNumber()).getAttribute("href");

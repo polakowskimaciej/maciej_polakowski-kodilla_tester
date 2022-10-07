@@ -1,16 +1,15 @@
 package homework.wallet;
 
 public class CashSlot {
-    private int contents;
+    protected int contents;
 
     public int getContents() {
         return contents;
     }
-    public int dispense(int amount) throws NullPointerException {
-        return this.contents = amount;
-    }
-    public String doNotDispense() {
-        return "null";
+
+    protected int dispense(int amount) {
+        this.contents = amount;
+        return amount;
     }
 
 }

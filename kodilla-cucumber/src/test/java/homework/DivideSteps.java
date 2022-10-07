@@ -29,7 +29,7 @@ public class DivideSteps implements En {
             //DivideChecker divideChecker = new DivideChecker();
             this.answer = DivideChecker.checkDivisability(this.anInt);
         });
-        Then("I should be told {string}", (String string) -> {
+        Then("I should get {string}", (String string) -> {
             // Write code here that turns the phrase above into concrete actions
             Assert.assertEquals(string, this.answer);
         });

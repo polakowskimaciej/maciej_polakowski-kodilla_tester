@@ -4,7 +4,7 @@ import org.junit.runner.RunWith;
 
 @RunWith(Cucumber.class)
 @CucumberOptions(
-        features = {"src/test/resources"}
+        features = {"C:\\InteliJ_Projects\\kodilla-course\\kodilla-cucumber\\src\\test\\resources\\is_it_summer.feature"}
 )
 public class TestRunner {
 }
