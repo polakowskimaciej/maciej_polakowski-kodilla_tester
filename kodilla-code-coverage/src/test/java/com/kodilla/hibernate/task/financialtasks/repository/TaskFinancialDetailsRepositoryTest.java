@@ -1,4 +1,4 @@
-package com.kodilla.hibernate.financialtasks.repository;
+package com.kodilla.hibernate.task.financialtasks.repository;
 
 import org.junit.jupiter.api.Test;
 

@@ -1,4 +1,4 @@
-package com.kodilla.hibernate.financialtasks;
+package com.kodilla.hibernate.task;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
@@ -8,8 +8,8 @@ import java.math.BigDecimal;
 @Table(name = "TASKS_FINANCIALS")
 public class TaskFinancialDetails {
     private int id;
-    BigDecimal price;
-    boolean paid;
+    private BigDecimal price;
+    private boolean paid;
 
     public TaskFinancialDetails(){}
 

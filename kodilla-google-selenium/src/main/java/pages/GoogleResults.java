@@ -23,7 +23,7 @@ public class GoogleResults extends AbstractPage {
         System.out.println(results.size());
     }
 
-    public void selectRandomPage() {
+    public RandomPage selectRandomPage() {
         Random random = new Random();
         int saidNumber = random.nextInt(this.results.size());
         results.get(saidNumber).click();

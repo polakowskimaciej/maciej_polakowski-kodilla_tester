@@ -12,6 +12,7 @@ import java.util.List;
 class TaskRepositoryTestSuite {
     @Autowired
     private TaskRepository taskRepository;
+    private TaskFinancialDetailsRepository taskFinancialDetailsRepository;
 
     private static final String DESCRIPTION = "Test: Learn Hibernate";
 

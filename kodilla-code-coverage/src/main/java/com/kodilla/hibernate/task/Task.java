@@ -1,6 +1,5 @@
 package com.kodilla.hibernate.task;
 
-import com.kodilla.hibernate.financialtasks.TaskFinancialDetails;
 import com.kodilla.hibernate.tasklist.TaskList;
 import org.springframework.beans.factory.annotation.Autowired;
 
@@ -18,6 +17,9 @@ public class Task {
     private TaskFinancialDetails taskFinancialDetails;
     private TaskList taskList;
 
+    public Task() {
+    }
+
     @ManyToOne
     @JoinColumn(name = "TASKLIST_ID")
     public TaskList getTaskList() {
@@ -33,12 +35,9 @@ public class Task {
     }
 
     @OneToOne(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
-    @JoinColumn(name = "TASK_FINANCIALS_ID")
+    @JoinColumn(name = "TASKS_FINANCIALS_ID")
     public TaskFinancialDetails getTaskFinancialDetails() {
         return taskFinancialDetails;
-    }
-
-    public Task() {
     }
     @Autowired
     public Task(String description, int duration) {
@@ -71,19 +70,19 @@ public class Task {
         return duration;
     }
 
-    private void setId(int id) {
+    public void setId(int id) {
         this.id = id;
     }
 
-    private void setDescription(String description) {
+    public void setDescription(String description) {
         this.description = description;
     }
 
-    private void setCreated(LocalDate created) {
+    public void setCreated(LocalDate created) {
         this.created = created;
     }
 
-    private void setDuration(int duration) {
+    public void setDuration(int duration) {
         this.duration = duration;
     }
 }
