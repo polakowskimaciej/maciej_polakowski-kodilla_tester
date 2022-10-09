@@ -1,6 +1,7 @@
 package com.kodilla.hibernate.tasklist;
 
 import com.kodilla.hibernate.task.Task;
+import org.springframework.beans.factory.annotation.Autowired;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
@@ -31,7 +32,7 @@ public class TaskList {
 
     public TaskList() {
     }
-
+    @Autowired
     public TaskList(String listName, String description) {
         this.listName = listName;
         this.description = description;

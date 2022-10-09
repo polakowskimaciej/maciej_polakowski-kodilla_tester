@@ -1,6 +1,8 @@
 package com.kodilla.hibernate.task;
 
+import com.kodilla.hibernate.financialtasks.TaskFinancialDetails;
 import com.kodilla.hibernate.tasklist.TaskList;
+import org.springframework.beans.factory.annotation.Autowired;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
@@ -14,7 +16,6 @@ public class Task {
     private LocalDate created;
     private int duration;
     private TaskFinancialDetails taskFinancialDetails;
-
     private TaskList taskList;
 
     @ManyToOne
@@ -39,7 +40,7 @@ public class Task {
 
     public Task() {
     }
-
+    @Autowired
     public Task(String description, int duration) {
         this.description = description;
         this.created = LocalDate.now();

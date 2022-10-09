@@ -1,11 +1,11 @@
-package com.kodilla.hibernate.task;
+package com.kodilla.hibernate.financialtasks;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
 import java.math.BigDecimal;
 
 @Entity
-@Table(name = "TASKFINANCIALDETAILS")
+@Table(name = "TASKS_FINANCIALS")
 public class TaskFinancialDetails {
     private int id;
     BigDecimal price;
