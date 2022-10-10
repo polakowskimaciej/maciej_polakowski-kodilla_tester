@@ -4,7 +4,7 @@ import org.springframework.stereotype.Component;
 
 @Component
 public class Calculator {
-    Display display;
+    private final Display display;
 
     public Calculator(Display display) {
         this.display = display;
